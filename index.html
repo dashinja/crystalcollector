@@ -60,19 +60,21 @@
       </div>
       <div class="row">
         <div class="score-holder w-100 text-center">
-          <li class="col">Wins: <span id="win"></span></li>
-          <li class="col">Loses:<span id="lose"></span></li>
+          <ul>
+            <div class="col display-4">Wins: <span id="win"></span></div>
+            <div class="col display-4">Loses:<span id="lose"></span></div>
+          </ul>
         </div>
       </div>
 
       <section class="container">
         <div class="row">
-          <div class="crystal">
-            <img
+          <div class="crystal w-100 text-center mt-4">
+            <!-- <img
               src="http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg"
               alt="crystals"
               class="img-crystal-old"
-            />
+            /> -->
             <div id="crystals"></div>
           </div>
         </div>
@@ -80,8 +82,10 @@
 
       <section class="container">
         <div class="row">
-          <div class="score-holder">You're total score is:</div>
-          <div id="total-score"></div>
+          <div class="score-holder w-25 text-center col">
+            You're total score is:
+            <div id="total-score" class="col"></div>
+          </div>
         </div>
       </section>
     </div>
