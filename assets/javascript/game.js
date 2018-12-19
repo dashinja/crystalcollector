@@ -28,11 +28,16 @@ $(document).ready(function() {
 
   // console.log('I increment', crystalWorthSelector); //remove me
 
-  let randomNumberGenerator = Math.floor(
-    Math.random() * 10 + Math.floor(Math.random() * 91) + 20
-  );
+  function randomNumberGenerator() {
+    let randomNumberGenerators;
+    randomNumberGenerators = Math.floor(
+      Math.random() * 10 + Math.floor(Math.random() * 91) + 20
+    );
 
-  numberToGuess = randomNumberGenerator;
+    return randomNumberGenerators;
+  }
+  randomNumberGenerator();
+  numberToGuess = randomNumberGenerator();
   // $('#number-to-guess').text(randomNumberGenerator);
 
   $('#number-to-guess').text(numberToGuess);
@@ -42,7 +47,9 @@ $(document).ready(function() {
 
   // forToMakeCrystals() was here!!
   function forToMakeCrystals() {
-      $('#crystals').empty()
+    $('#crystals').empty();
+    randomNumberGenerator();
+
     for (let i = 0; i < numberAddOptions.length; i++) {
       let imageCrystal = $('<img>');
 
@@ -61,7 +68,7 @@ $(document).ready(function() {
 
   //On Click
   $(document).on('click', '.crystal-image', function() {
-    console.log(numberAddOptions);
+    // console.log(numberAddOptions);
     crystalWorth = $(this).attr('data-crystalvalue');
     crystalWorth = parseInt(crystalWorth);
 
@@ -77,6 +84,7 @@ $(document).ready(function() {
       shuffleArray(numberAddOptions);
       // crystalWorthSelectorMaker();
       totalScore = 0;
+      numberToGuess = randomNumberGenerator();
       forToMakeCrystals();
     } else if (totalScore > numberToGuess) {
       // console.log('You lose');
@@ -87,8 +95,8 @@ $(document).ready(function() {
       shuffleArray(numberAddOptions);
       // crystalWorthSelectorMaker();
       totalScore = 0;
+      numberToGuess = randomNumberGenerator();
       forToMakeCrystals();
     }
   });
 }); //document.ready ends here
-
