@@ -1,48 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script
-  src="http://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <script src="./assets/javascript/game.js"></script>
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/javascript/game.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://bootswatch.com/4/cyborg/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cantarell:700|Lato:100i"
+      rel="stylesheet"
+    />
 
-  <title>Crystal Collector</title>
-</head>
-<body>
-  
-  <header>
-    <h1>Welcome to Crystal Selector</h1>
-  </header>  
+    <style>
+      img.img-crystal-old {
+        height: 200px;
+        width: 200px;
+      }
 
-  <div id="randomTargetGen"></div>
-  <div class="score-holder">
-    <li>Wins:
-      <span id="win"></span>
-    <li>Loses:<span id="lose"></span></li>
-    </li>
-  </div>
+      .display-2 {
+        font-family: 'Cantarell', sans-serif;
+      }
 
-  <section class="container">
-    <div class="row">
-      <div class="crystal">
-        <div id="crystal-1"></div>
-        <div id="crystal-2"></div>
-        <div id="crystal-3"></div>
-        <div id="crystal-4"></div>
+      .display-4 {
+        font-family: 'Lato', sans-serif;
+      }
+    </style>
+
+    <title>Crystal Collector</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <header class="text-center">
+          <h1 class="display-2">Welcome to Crystal Selector</h1>
+        </header>
       </div>
-    </div>
-  </section>
+      <div class="row">
+        <div class="text-center">
+          <h2 class="display-4">
+            Target - Aim - Hope: <span id="number-to-guess"></span>
+          </h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="score-holder">
+          <li>Wins: <span id="win"></span></li>
+          <li>Loses:<span id="lose"></span></li>
+        </div>
+      </div>
 
-  <section class="container">
-    <div class="row">
-      <div class="score-holder">You're total score is:</div>
-      <div id="total-score"></div>
+      <section class="container">
+        <div class="row">
+          <div class="crystal">
+            <img
+              src="http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg"
+              alt="crystals"
+              class="img-crystal-old"
+            />
+            <div id="crystals"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="row">
+          <div class="score-holder">You're total score is:</div>
+          <div id="total-score"></div>
+        </div>
+      </section>
     </div>
-  </section>
-</body>
+  </body>
 </html>
