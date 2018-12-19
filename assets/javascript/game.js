@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
   // Var Stash
-  let numberToGuess;
+  let numberToGuess = 0;
   let wins = 0;
   let loses = 0;
   let totalScore = 0;
@@ -33,12 +33,11 @@ $(document).ready(function() {
     randomNumberGenerators = Math.floor(
       Math.random() * 10 + Math.floor(Math.random() * 91) + 20
     );
-
     return randomNumberGenerators;
   }
-  randomNumberGenerator();
+
   numberToGuess = randomNumberGenerator();
-  // $('#number-to-guess').text(randomNumberGenerator);
+  // $('#number-to-guess').text(randomNumberGenerator());
 
   $('#number-to-guess').text(numberToGuess);
   crystalWorthSelectorMaker();
@@ -85,17 +84,18 @@ $(document).ready(function() {
       // crystalWorthSelectorMaker();
       totalScore = 0;
       numberToGuess = randomNumberGenerator();
+      $('#number-to-guess').text(numberToGuess);
       forToMakeCrystals();
     } else if (totalScore > numberToGuess) {
       // console.log('You lose');
 
       loses++;
-      console.log(loses);
       $('#lose').text(loses);
       shuffleArray(numberAddOptions);
       // crystalWorthSelectorMaker();
       totalScore = 0;
       numberToGuess = randomNumberGenerator();
+      $('#number-to-guess').text(numberToGuess);
       forToMakeCrystals();
     }
   });
